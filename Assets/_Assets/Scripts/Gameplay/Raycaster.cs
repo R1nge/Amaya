@@ -1,4 +1,3 @@
-using System;
 using _Assets.Scripts.Services.StateMachine;
 using UnityEngine;
 using VContainer;
@@ -27,9 +26,7 @@ namespace _Assets.Scripts.Gameplay
 
                     if (card.IsTarget)
                     {
-                        Debug.Log(card.name);
-                        //TODO: create a new state to handle next levels
-                        Debug.Log("You won!");
+                        _gameStateMachine.SwitchState(GameStateType.Game);
                     }
                 }
             }

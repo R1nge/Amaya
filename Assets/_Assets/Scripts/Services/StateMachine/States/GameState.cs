@@ -21,8 +21,7 @@
 
         public void Exit()
         {
-            _levelCreator.Reset();
-            _goalService.ResetGoal();
+            _levelCreator.DestroyCards();
         }
     }
 }

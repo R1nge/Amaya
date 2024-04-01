@@ -20,6 +20,8 @@ namespace _Assets.Scripts.Services.StateMachine
             {
                 case GameStateType.Game:
                     return new GameState(gameStateMachine, _levelCreator, _goalService);
+                case GameStateType.GameOver:
+                    return new GameOverState(_levelCreator, _goalService);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(gameStateType), gameStateType, null);
             }

@@ -14,8 +14,7 @@ namespace _Assets.Scripts.Services
         {
             if (Equals(CurrentStateType, stateType))
             {
-                Debug.LogError($"Trying to switch to the same state {stateType}");
-                return;
+                Debug.LogWarning($"Switching to the same state {stateType}");
             }
             
             CurrentState?.Exit();

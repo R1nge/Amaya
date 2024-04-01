@@ -70,10 +70,19 @@ namespace _Assets.Scripts.Services
             return cardData;
         }
 
-        public void Reset()
+        public void DestroyCards()
         {
+            for (int i = _currentCards.Count - 1; i >= 0; i--)
+            {
+                Object.Destroy(_currentCards[i].gameObject);
+            }
+
             _usedCards.Clear();
             _currentCards.Clear();
+        }
+
+        public void Reset()
+        {
             _currentLevel = -1;
         }
     }
