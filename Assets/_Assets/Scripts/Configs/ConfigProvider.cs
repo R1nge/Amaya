@@ -6,7 +6,9 @@ namespace _Assets.Scripts.Configs
     {
         [SerializeField] private UIConfig uiConfig;
         [SerializeField] private CardDataBundle cardDataBundle;
+        [SerializeField] private LevelConfig levelConfig;
         public UIConfig UIConfig => uiConfig;
         public CardDataBundle CardDataBundle => cardDataBundle;
+        public LevelConfig LevelConfig => levelConfig;
     }
 }
