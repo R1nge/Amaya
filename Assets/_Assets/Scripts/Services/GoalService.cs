@@ -15,6 +15,12 @@ namespace _Assets.Scripts.Services
 
         public void SetGoal()
         {
+            if (_levelCreator.CurrentCards.Count == 0)
+            {
+                Debug.LogWarning("Goal service: No cards to select from");
+                return;
+            }
+            
             var index = Random.Range(0, _levelCreator.CurrentCards.Count);
             _targetCard = _levelCreator.CurrentCards[index];
             _targetCard.SetTarget(true);

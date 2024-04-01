@@ -18,6 +18,8 @@ namespace _Assets.Scripts.Services.UIs.StateMachine
             {
                 case UIStateType.Game:
                     return new UIGameState(_uiFactory);
+                case UIStateType.Win:
+                    return new UIGameWinState(_uiFactory);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(uiStateType), uiStateType, null);
             }

@@ -14,6 +14,7 @@ namespace _Assets.Scripts.Services
         private readonly List<string> _usedCards = new List<string>();
         private readonly List<Card> _currentCards = new List<Card>();
         public IReadOnlyList<Card> CurrentCards => _currentCards;
+        public int CurrentLevel => _currentLevel;
 
         private LevelCreator(ConfigProvider configProvider, CardFactory cardFactory)
         {

@@ -26,7 +26,7 @@ namespace _Assets.Scripts.Gameplay
 
                     if (card.IsTarget)
                     {
-                        _gameStateMachine.SwitchState(GameStateType.Game);
+                        _gameStateMachine.SwitchState(GameStateType.NextLevel);
                     }
                 }
             }

@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: UI Config
   m_EditorClassIdentifier: 
   gameUI: {fileID: 8335151913570239623, guid: 9d145217430945b41a219a360d4ba837, type: 3}
+  gameOverUI: {fileID: 8335151913570239623, guid: 15d6e1fa63c3b8e40b3bb20134574681, type: 3}
+  winUI: {fileID: 8335151913570239623, guid: 4eb5cb41317fc78468d016a32e642bf2, type: 3}

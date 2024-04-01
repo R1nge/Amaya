@@ -4,6 +4,7 @@
     {
         None = 0,
         Game = 1,
-        GameOver = 2
+        NextLevel = 2,
+        Win = 3
     }
 }
