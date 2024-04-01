@@ -34,6 +34,12 @@ namespace _Assets.Scripts.Gameplay
 
         public void SetTarget(bool isTarget) => _isTarget = isTarget;
 
+        public async Task PlayBounce()
+        {
+            _sequence.Restart();
+            await _sequence.AsyncWaitForCompletion();
+        }
+
         public async Task Interact()
         {
             if (!_isTarget)

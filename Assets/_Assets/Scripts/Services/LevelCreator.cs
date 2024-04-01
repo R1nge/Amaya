@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using _Assets.Scripts.Configs;
 using _Assets.Scripts.Gameplay;
 using _Assets.Scripts.Services.Factories;
@@ -22,7 +23,7 @@ namespace _Assets.Scripts.Services
             _cardFactory = cardFactory;
         }
 
-        public void Create()
+        public async Task Create(bool playAnimation = false)
         {
             _currentLevel++;
 
@@ -47,6 +48,10 @@ namespace _Assets.Scripts.Services
                     var cardData = GetRandomCard();
                     var card = _cardFactory.Create(position, rotation, cardData);
                     _currentCards.Add(card);
+                    if (playAnimation)
+                    {
+                        await card.PlayBounce();
+                    }
                 }
             }
         }

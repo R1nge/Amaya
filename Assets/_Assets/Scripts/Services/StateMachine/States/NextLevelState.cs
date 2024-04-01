@@ -18,7 +18,7 @@ namespace _Assets.Scripts.Services.StateMachine.States
             _configProvider = configProvider;
         }
 
-        public void Enter()
+        public async void Enter()
         {
             if (_levelCreator.CurrentLevel == _configProvider.LevelConfig.LevelData.Length - 1)
             {
@@ -27,7 +27,7 @@ namespace _Assets.Scripts.Services.StateMachine.States
                 return;
             }
 
-            _levelCreator.Create();
+            await _levelCreator.Create();
             _goalService.SetGoal();
         }
 

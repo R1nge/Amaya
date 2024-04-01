@@ -17,11 +17,10 @@ namespace _Assets.Scripts.Services.StateMachine.States
             _uiStateMachine = uiStateMachine;
         }
 
-        public void Enter()
+        public async void Enter()
         {
-            //TODO: create with animation
             _uiStateMachine.SwitchState(UIStateType.Game);
-            _levelCreator.Create();
+            await _levelCreator.Create(true);
             _goalService.SetGoal();
         }
 

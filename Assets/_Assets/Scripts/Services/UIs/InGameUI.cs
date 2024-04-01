@@ -13,11 +13,7 @@ namespace _Assets.Scripts.Services.UIs
         [SerializeField] private TextMeshProUGUI taskText;
         [Inject] private GoalService _goalService;
 
-        private void Start()
-        {
-            _goalService.OnTargetCardChanged += OnTargetCardChanged;
-            OnTargetCardChanged(_goalService.TargetCard);
-        }
+        private void Start() => _goalService.OnTargetCardChanged += OnTargetCardChanged;
 
         private async void OnTargetCardChanged(Card card)
         {
