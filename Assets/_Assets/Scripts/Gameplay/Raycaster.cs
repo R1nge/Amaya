@@ -9,7 +9,7 @@ namespace _Assets.Scripts.Gameplay
         [SerializeField] private new Camera camera;
         [Inject] private GameStateMachine _gameStateMachine;
 
-        private void Update()
+        private async void Update()
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -22,7 +22,7 @@ namespace _Assets.Scripts.Gameplay
 
                 if (rayHit.collider.TryGetComponent(out Card card))
                 {
-                    card.Interact();
+                    await card.Interact();
 
                     if (card.IsTarget)
                     {

@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using _Assets.Scripts.Configs;
 using DG.Tweening;
 using UnityEngine;
@@ -33,20 +34,24 @@ namespace _Assets.Scripts.Gameplay
 
         public void SetTarget(bool isTarget) => _isTarget = isTarget;
 
-        public void Interact()
+        public async Task Interact()
         {
             if (!_isTarget)
             {
-                BounceTween();
+                await BounceTween();
             }
             else
             {
-                BounceTween();
+                await BounceTween();
                 //TODO: add stars patricles
             }
         }
 
-        private void BounceTween() => _sequence.Restart();
+        private async Task BounceTween()
+        {
+            _sequence.Restart();
+            await _sequence.AsyncWaitForCompletion();
+        }
 
         private void OnDestroy() => _sequence.Kill();
     }
