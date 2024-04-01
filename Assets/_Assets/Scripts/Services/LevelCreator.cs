@@ -36,13 +36,17 @@ namespace _Assets.Scripts.Services
             var rows = _configProvider.LevelConfig.LevelData[_currentLevel].Rows;
             var columns = _configProvider.LevelConfig.LevelData[_currentLevel].Columns;
             var cardSize = _configProvider.LevelConfig.LevelData[_currentLevel].CardSize;
+            var totalWidth = (columns - 1) * cardSize.x;
+            var totalHeight = (rows - 1) * cardSize.y;
+            var offsetX = -totalWidth / 2;
+            var offsetY = -totalHeight / 2;
 
-            for (int row = 0; row < rows; row++)
+            for (var row = 0; row < rows; row++)
             {
-                for (int col = 0; col < columns; col++)
+                for (var col = 0; col < columns; col++)
                 {
-                    var positionX = col * cardSize.x;
-                    var positionY = row * cardSize.y;
+                    var positionX = offsetX + col * cardSize.x;
+                    var positionY = offsetY + row * cardSize.y;
                     var position = new Vector3(positionX, positionY, 10);
                     var rotation = Quaternion.identity;
                     var cardData = GetRandomCard();
