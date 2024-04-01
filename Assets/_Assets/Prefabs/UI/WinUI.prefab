@@ -356,7 +356,9 @@ GameObject:
   - component: {fileID: 6514950838263809843}
   - component: {fileID: 715127925920944877}
   - component: {fileID: 6741133750646486387}
+  - component: {fileID: 7423807993697677777}
   - component: {fileID: 3231705167858706907}
+  - component: {fileID: 2162448805234240905}
   m_Layer: 5
   m_Name: WinUI
   m_TagString: Untagged
@@ -445,6 +447,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &7423807993697677777
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335151913570239623}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &3231705167858706907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,3 +472,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restart: {fileID: 6321923639144176699}
+  uiFadeAnimation: {fileID: 2162448805234240905}
+--- !u!114 &2162448805234240905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335151913570239623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79005512230545e89788a7b5dcf3b27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.5
+  canvasGroup: {fileID: 7423807993697677777}
