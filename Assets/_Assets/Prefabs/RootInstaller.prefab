@@ -62,3 +62,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiConfig: {fileID: 11400000, guid: c01c0ec4a5855f641b051cf97763b193, type: 2}
+  cardDataBundle: {fileID: 11400000, guid: bfb7e7313ecb1ce43a4665841a2b531b, type: 2}
