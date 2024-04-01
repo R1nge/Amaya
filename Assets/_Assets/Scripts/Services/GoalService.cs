@@ -1,5 +1,7 @@
+using System;
 using _Assets.Scripts.Gameplay;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _Assets.Scripts.Services
 {
@@ -7,6 +9,9 @@ namespace _Assets.Scripts.Services
     {
         private readonly LevelCreator _levelCreator;
         private Card _targetCard;
+        public Card TargetCard => _targetCard;
+        
+        public event Action<Card> OnTargetCardChanged; 
 
         private GoalService(LevelCreator levelCreator)
         {
@@ -24,6 +29,7 @@ namespace _Assets.Scripts.Services
             var index = Random.Range(0, _levelCreator.CurrentCards.Count);
             _targetCard = _levelCreator.CurrentCards[index];
             _targetCard.SetTarget(true);
+            OnTargetCardChanged?.Invoke(TargetCard);
         }
 
         public void ResetGoal()

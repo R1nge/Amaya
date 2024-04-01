@@ -17,10 +17,10 @@ namespace _Assets.Scripts.Services.Factories
             _configProvider = configProvider;
         }
         
-        public Card Create(Vector3 position, Quaternion rotation, Sprite sprite)
+        public Card Create(Vector3 position, Quaternion rotation, CardData cardData)
         {
             var card = _objectResolver.Instantiate(_configProvider.CardPrefab, position, rotation);
-            card.ChangeSprite(sprite);
+            card.Init(cardData);
             return card;
         }
     }

@@ -45,7 +45,7 @@ namespace _Assets.Scripts.Services
                     var position = new Vector3(positionX, positionY, 10);
                     var rotation = Quaternion.identity;
                     var cardData = GetRandomCard();
-                    var card = _cardFactory.Create(position, rotation, cardData.Sprite);
+                    var card = _cardFactory.Create(position, rotation, cardData);
                     _currentCards.Add(card);
                 }
             }
