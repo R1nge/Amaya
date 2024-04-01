@@ -15,10 +15,10 @@ MonoBehaviour:
   levelData:
   - rows: 1
     columns: 3
-    cardSize: {x: 2, y: 2}
+    cardSize: {x: 3, y: 3}
   - rows: 2
     columns: 3
-    cardSize: {x: 2, y: 2}
+    cardSize: {x: 3, y: 3}
   - rows: 3
     columns: 3
-    cardSize: {x: 2, y: 2}
+    cardSize: {x: 3, y: 3}
