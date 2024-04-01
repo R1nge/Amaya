@@ -12,6 +12,8 @@ namespace _Assets.Scripts.CompositionRoot
     {
         protected override void Configure(IContainerBuilder builder)
         {
+            builder.Register<GoalService>(Lifetime.Singleton);
+            
             builder.Register<CardFactory>(Lifetime.Singleton);
             builder.Register<LevelCreator>(Lifetime.Singleton);
             

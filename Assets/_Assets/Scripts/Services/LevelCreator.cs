@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using _Assets.Scripts.Configs;
+using _Assets.Scripts.Gameplay;
 using _Assets.Scripts.Services.Factories;
 using UnityEngine;
 
@@ -10,7 +11,9 @@ namespace _Assets.Scripts.Services
         private readonly ConfigProvider _configProvider;
         private readonly CardFactory _cardFactory;
         private int _currentLevel = -1;
-        private List<string> _usedCards = new List<string>();
+        private readonly List<string> _usedCards = new List<string>();
+        private readonly List<Card> _currentCards = new List<Card>();
+        public IReadOnlyList<Card> CurrentCards => _currentCards;
 
         private LevelCreator(ConfigProvider configProvider, CardFactory cardFactory)
         {
@@ -41,7 +44,8 @@ namespace _Assets.Scripts.Services
                     var position = new Vector3(positionX, positionY, 10);
                     var rotation = Quaternion.identity;
                     var cardData = GetRandomCard();
-                    _cardFactory.Create(position, rotation, cardData.Sprite);
+                    var card = _cardFactory.Create(position, rotation, cardData.Sprite);
+                    _currentCards.Add(card);
                 }
             }
         }
@@ -68,6 +72,8 @@ namespace _Assets.Scripts.Services
 
         public void Reset()
         {
+            _usedCards.Clear();
+            _currentCards.Clear();
             _currentLevel = -1;
         }
     }
