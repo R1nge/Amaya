@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b2381b70b14a40ae059f5617d07f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardPrefab: {fileID: 8816197060590426365, guid: 59434b5b4a407ab4cab725e1a2d71b4f, type: 3}
   uiConfig: {fileID: 11400000, guid: c01c0ec4a5855f641b051cf97763b193, type: 2}
   cardDataBundle: {fileID: 11400000, guid: bfb7e7313ecb1ce43a4665841a2b531b, type: 2}
   levelConfig: {fileID: 11400000, guid: d37712fbb8639e8458548864089a6a7b, type: 2}
