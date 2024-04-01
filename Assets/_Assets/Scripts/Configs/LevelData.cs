@@ -8,7 +8,9 @@ namespace _Assets.Scripts.Configs
     {
         [SerializeField] private int rows;
         [SerializeField] private int columns;
+        [SerializeField] private Vector2 cardSize;
         public int Rows => rows;
         public int Columns => columns;
+        public Vector2 CardSize => cardSize;
     }
 }
