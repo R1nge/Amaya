@@ -28,20 +28,8 @@ namespace _Assets.Scripts.Services.UIs
             }
             else
             {
-                await Next();
                 taskText.text = $"Find {card.CardData.Identifier}";
             }
-        }
-
-        private async Task Next()
-        {
-            await taskText.DOFade(0, fadeDuration).OnComplete(() => taskText.DOFade(1, fadeDuration))
-                .AsyncWaitForCompletion();
-        }
-
-        private async Task FadeOut()
-        {
-            await taskText.DOFade(0, fadeDuration).AsyncWaitForCompletion();
         }
 
         private async Task FadeIn()
